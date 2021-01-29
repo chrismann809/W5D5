@@ -3,6 +3,12 @@ def eighties_b_movies
   # 3 and 5 (inclusive).
   # Show the id, title, year, and score.
 
+  Movie
+    .select(:id, :title, :yr, :score)
+    .where(yr: (1980..1989).to_a)
+    .where('score <= 5 AND score >= 3')
+    
+    
 end
 
 def bad_years
